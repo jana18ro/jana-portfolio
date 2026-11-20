@@ -1,0 +1,185 @@
+%% Jana Robert-Oragbon — quant-focused resume
+%% Build:  make -C resume        (writes resume.pdf with phone, and ../public/resume.pdf without)
+%% The public copy on the website leaves the phone number out.
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ---------- public / private switch ----------
+% Compile with  \def\public{1}  prepended to leave the phone out.
+\providecommand{\public}{0}
+
+% ---------- page ----------
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.15in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-5pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+% ---------- commands ----------
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \small #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \small #2 \\
+  \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+% ================= HEADING =================
+\begin{center}
+  {\Huge \scshape Jana Robert-Oragbon} \\ \vspace{3pt}
+  \small
+  \if\public0 (713) 204-9397 $|$ \fi
+  \href{mailto:janarobert.o.21@gmail.com}{janarobert.o.21@gmail.com} $|$
+  \href{https://www.linkedin.com/in/jana-robert-oragbon}{linkedin.com/in/jana-robert-oragbon} $|$
+  \href{https://github.com/jana18ro}{github.com/jana18ro} $|$
+  \href{https://jana18ro.github.io}{jana18ro.github.io}
+\end{center}
+
+% ================= EDUCATION =================
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Rice University -- Houston, TX}{Spring 2029}
+    {B.A. Computer Science; B.A. Mathematical Economic Analysis}{GPA: 3.88/4.00}
+    \resumeItemListStart
+      \resumeItem{\textbf{Coursework:} Probability \& Statistics, Multivariable Calculus, Data Science \& Machine Learning, Algorithmic Thinking, Applied
+        Econometrics, Computer Organization (C++), Program Design (Java), Microeconomics, Macroeconomics, Computational Thinking}
+      \resumeItem{\textbf{Honors:} National Finalist, 2025 International Economics Olympiad; Overall Best Graduating Student and Highest Honors in
+        Economics, Mathematics \& Computer Science, Loyola Jesuit College}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% ================= SKILLS =================
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.0in, label={}]
+  \small{\item{
+    \textbf{Quantitative Methods:} Probability \& Statistics, Regression, Probabilistic Forecasting, Cross-Validation, Classification Metrics
+      (Accuracy, F1), Economic \& Financial Modeling, Cost-Benefit Analysis \\
+    \textbf{Languages:} Python, C/C++, SQL, JavaScript, TypeScript, HTML/CSS \\
+    \textbf{Libraries \& Tools:} NumPy, Pandas, Scikit-learn, PyTorch, Matplotlib, MATLAB, Excel, FastAPI, Flask, Django, React, Microsoft
+      Azure, Elasticsearch, OpenAI API (GPT-4o), Git \\
+    \textbf{Certifications:} Bloomberg Market Concepts; AWS AI \& ML Scholars
+  }}
+\end{itemize}
+\vspace{-12pt}
+
+% ================= EXPERIENCE =================
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Baker Institute for Public Policy, Rice University}{Apr 2026 -- Aug 2026}
+    {Software Engineering \& Data Science Research Intern}{Houston, TX}
+    \resumeItemListStart
+      \resumeItem{Co-designed and deployed a scalable relational database in Python, Django and FastAPI structuring 10,000+ policy documents
+        ($\sim$200,000 pages), and built automated Azure AI OCR, NLP and NER pipelines, cutting manual processing time by $\sim$50\% and
+        improving data retrieval efficiency by $\sim$30\%.}
+      \resumeItem{Contributed to the development of Azure AI--driven analytical frameworks quantifying expert influence on federal policymaking,
+        using high-accuracy text extraction to improve accessibility of archive records and link key actors, institutions and outcomes across
+        a 15-person research team.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Handshake AI}{Feb 2026 -- May 2026}
+    {AI Training Engineer}{Houston, TX}
+    \resumeItemListStart
+      \resumeItem{Annotated 100+ datasets of frontier LLM outputs and engineered domain-specific prompts to evaluate technical accuracy and
+        logical reasoning, flagging edge cases, debugging hallucinations in generated code, and providing structured RLHF feedback that
+        improved model reliability by $\sim$10\%.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% ================= PROJECTS =================
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{FIFA World Cup '26 Predictor} $|$ \emph{Python, scikit-learn, pandas, NumPy, Flask, JavaScript}}{May 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Built a probabilistic forecasting model on 500+ international matches, engineering team-strength features and correcting for class
+        imbalance to produce win/loss probabilities at 55\% accuracy across tournament scenarios.}
+      \resumeItem{Served forecasts through a full-stack Flask and JavaScript web app with real-time match-statistics visualizations.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Machine Learning Package} $|$ \emph{Python, NumPy, pandas, scikit-learn, PyTorch, pytest}}{Apr 2026 -- May 2026}
+    \resumeItemListStart
+      \resumeItem{Implemented regression, decision tree, clustering, SVM and neural network models as reusable object-oriented components,
+        comparing predictive performance with feature engineering and cross-validation.}
+      \resumeItem{Wrote a pytest suite to keep results reproducible as the package grows.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{AURA: Accessible Understanding \& Remediation Assistant} $|$ \emph{Azure, GPT-4o, FastAPI}}{Mar 2026 -- Aug 2026}
+    \resumeItemListStart
+      \resumeItem{Built an Azure custom classifier for page-stream segmentation of multi-document government PDF productions and benchmarked it
+        head-to-head against a GPT-4o rulebook baseline on accuracy and F1 score.}
+      \resumeItem{Contributed to an end-to-end pipeline (NiceGUI, FastAPI, Elasticsearch; OCR via Azure Layout and Mathpix) producing
+        searchable PDF/UA- and WCAG-compliant records for a campus-wide pilot at Rice.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Signly (HackRice '26)} $|$ \emph{React, TypeScript, Vite, Tailwind CSS, MediaPipe, Gemini API}}{Sep 2026}
+    \resumeItemListStart
+      \resumeItem{Built the gameplay layer of a webcam ASL-learning app, including a 5-level Practice course scaling from 5 to 36 signs, a 3-tier timed
+        Speed mode (15s/30s/60s) drawing from a no-repeat shuffled deck (sampling without replacement), and per-sign confidence gating
+        to keep every sign completable; developed a 9-game Math Lab answered in ASL digits across 3 difficulty tiers (arithmetic to
+        calculus) with combo/XP scoring, validating its logic against 18,000+ generated test problems.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% ================= LEADERSHIP =================
+\section{Leadership}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Rice University African Student Association} $|$ \emph{Fundraising Chair}}{Mar 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Manage budgets for 5 events per semester, using cost and feasibility models in Excel to set prices, forecast revenue and allocate
+        funds; designed a tiered paid-voting and bidding auction targeting \$1,000+ in profit.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Rice University Student Senate} $|$ \emph{New Student Representative}}{Aug 2025 -- Mar 2026}
+    \resumeItemListStart
+      \resumeItem{Ran cost-benefit and feasibility analyses estimating the fiscal impact of proposed campus programs, and advocated data-driven
+        policy changes to 50+ senators and college presidents based on feedback from 1,000+ new students.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}

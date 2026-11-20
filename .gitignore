@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+
+# LaTeX build output
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/resume.pdf
