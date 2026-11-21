@@ -1,15 +1,15 @@
-/* Editorial portfolio look: maroon "pages" with corner labels, a script + serif type pairing,
+/* Editorial portfolio look: navy "pages" with corner labels, a script + serif type pairing,
    hand-placed stars and ornate frames. The quant twist: every frame holds a chart, and the
    cover's hero is a live random walk. */
 :root {
-  --maroon: #5a1814;
-  --maroon-deep: #3f0f0c;
-  --maroon-soft: #6e2420;
-  --cream: #f3eadb;
-  --cream-dim: #d9c8b4;
-  --muted: #c4a99a;
-  --rule: rgba(243, 234, 219, 0.22);
-  --star: #b8433a;
+  --navy: #13294b;
+  --navy-deep: #0b1a33;
+  --navy-soft: #1c3a66;
+  --cream: #eef2f8;
+  --cream-dim: #b9c6da;
+  --muted: #93a4bf;
+  --rule: rgba(238, 242, 248, 0.2);
+  --star: #6ea4e6;
 
   --sans: "Archivo Variable", "Archivo", "Helvetica Neue", Arial, sans-serif;
   --serif: "Cormorant Garamond Variable", "Cormorant Garamond", Georgia, serif;
@@ -30,7 +30,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--maroon-deep);
+  background: var(--navy-deep);
 }
 
 body {
@@ -42,8 +42,8 @@ body {
   -webkit-font-smoothing: antialiased;
   /* faint paper grain over everything */
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    var(--maroon);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    var(--navy);
 }
 
 .script {
@@ -84,7 +84,7 @@ button:focus-visible {
   top: 1rem;
   z-index: 10;
   background: var(--cream);
-  color: var(--maroon);
+  color: var(--navy);
   padding: 0.4rem 0.8rem;
 }
 
@@ -100,7 +100,7 @@ button:focus-visible {
   justify-content: space-between;
   gap: 0.5rem 2rem;
   padding: 0.9rem var(--gutter);
-  background: rgba(63, 15, 12, 0.86);
+  background: rgba(11, 26, 51, 0.88);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
@@ -190,8 +190,8 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* the template's split: lighter maroon left, deep panel right */
-  background: linear-gradient(90deg, transparent 0 50%, var(--maroon-deep) 50% 100%);
+  /* the split: lighter navy left, deep panel right */
+  background: linear-gradient(90deg, transparent 0 50%, var(--navy-deep) 50% 100%);
 }
 
 .cover .s1 { top: 18%; left: 54%; }
@@ -306,7 +306,7 @@ button:focus-visible {
   margin: -5.5px 0 0 -5.5px;
   border-radius: 50%;
   background: var(--star);
-  box-shadow: 0 0 0 6px rgba(184, 67, 58, 0.25);
+  box-shadow: 0 0 0 6px rgba(110, 164, 230, 0.25);
   animation: settle 0.4s ease-out 1.5s both;
 }
 
@@ -357,7 +357,7 @@ button:focus-visible {
 .copy-button:hover,
 .pill:hover {
   background: var(--cream);
-  color: var(--maroon);
+  color: var(--navy);
 }
 
 /* ---------- headings ---------- */
@@ -457,7 +457,7 @@ button:focus-visible {
   position: relative;
   padding: 10px;
   border: 1px solid var(--cream-dim);
-  background: var(--maroon-deep);
+  background: var(--navy-deep);
 }
 
 .frame-inner {
@@ -480,7 +480,7 @@ button:focus-visible {
   content: "";
   position: absolute;
   inset: 5px;
-  background: var(--maroon-deep);
+  background: var(--navy-deep);
   clip-path: inherit;
 }
 .frame-corner.tl { top: -8px; left: -8px; }
@@ -511,6 +511,26 @@ button:focus-visible {
   }
 }
 
+.project-shots {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.project-shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+
+/* projects without a picture: text runs the full width */
+@media (min-width: 860px) {
+  .project.text-only {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 52rem;
+  }
+}
+
 .project svg {
   display: block;
   width: 100%;
@@ -525,7 +545,7 @@ button:focus-visible {
 }
 .v-fill { fill: var(--cream); }
 .v-mid { fill: var(--star); }
-.v-faint { fill: rgba(243, 234, 219, 0.28); }
+.v-faint { fill: rgba(238, 242, 248, 0.28); }
 .v-ring { fill: none; stroke: var(--star); stroke-width: 1.6; }
 .v-axis { stroke: var(--rule); }
 .v-boundary { stroke: var(--cream-dim); stroke-width: 1; stroke-dasharray: 4 5; }
@@ -767,7 +787,7 @@ button:focus-visible {
   font-family: var(--script);
   font-size: clamp(8rem, 18vw, 13rem);
   color: var(--cream-dim);
-  background: var(--maroon);
+  background: var(--navy);
 }
 
 .about-text p {
@@ -793,17 +813,11 @@ button:focus-visible {
   padding: 2rem var(--gutter);
   font-size: var(--step--1);
   color: var(--cream-dim);
-  background: var(--maroon-deep);
+  background: var(--navy-deep);
 }
 
 .site-footer p {
   margin: 0;
-}
-
-.footer-sign {
-  font-size: 2.4rem;
-  line-height: 1;
-  color: var(--cream);
 }
 
 /* ---------- small screens ---------- */

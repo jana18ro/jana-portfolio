@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5a1814",
+  themeColor: "#13294b",
   viewportFit: "cover",
 };
 
@@ -28,10 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main id="main">{children}</main>
         <footer className="site-footer">
-          <p>
-            © 2026 {person.shortName}. Built with Next.js and TypeScript; charts drawn in SVG.
-          </p>
-          <p className="script footer-sign">Jana</p>
+          <p>© 2026 {person.shortName}</p>
         </footer>
       </body>
     </html>

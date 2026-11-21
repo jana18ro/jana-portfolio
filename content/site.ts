@@ -14,6 +14,7 @@ export type Entry = {
   points: string[];
   links?: Link[];
   visual?: Visual; // small chart drawn in the project's frame
+  images?: { src: string; alt: string }[]; // screenshots in public/projects/, shown in the frame
 };
 
 export const person = {
@@ -66,7 +67,6 @@ export const projects: Entry[] = [
       "Served forecasts through a full-stack Flask and JavaScript web app with real-time match-statistics visualizations.",
     ],
     links: [{ label: "Code", href: "https://github.com/jana18ro/FIFA-WC26-Predictor" }],
-    visual: "forecast",
   },
   {
     title: "Machine Learning Package",
@@ -84,7 +84,6 @@ export const projects: Entry[] = [
         href: "https://github.com/jana18ro/CMOR-438-Data-Science-and-Machine-Learning",
       },
     ],
-    visual: "models",
   },
   {
     title: "AURA: Accessible Understanding & Remediation Assistant",
@@ -96,7 +95,13 @@ export const projects: Entry[] = [
       "Built an Azure custom classifier for page-stream segmentation and benchmarked it head-to-head against a GPT-4o rulebook baseline on accuracy and F1 score.",
       "Contributed to an end-to-end pipeline (NiceGUI, FastAPI, Elasticsearch; OCR via Azure Layout and Mathpix) producing searchable PDF/UA- and WCAG-compliant records for a campus-wide pilot at Rice.",
     ],
-    visual: "benchmark",
+    links: [{ label: "Code", href: "https://github.com/yingjin/AURA_OCR_Accessibility" }],
+    images: [
+      {
+        src: "projects/aura-poster.jpg",
+        alt: "Research poster: AURA, an integrated workflow for remediating PDFs for user accessibility and federal compliance (Rice University, Baker Institute)",
+      },
+    ],
   },
   {
     title: "Signly",
@@ -109,7 +114,17 @@ export const projects: Entry[] = [
       "A 3-tier timed Speed mode (15s/30s/60s) drawing from a no-repeat shuffled deck (sampling without replacement).",
       "A 9-game Math Lab answered in ASL digits across 3 difficulty tiers (arithmetic to calculus) with combo/XP scoring, validated against 18,000+ generated test problems.",
     ],
-    visual: "signs",
+    links: [{ label: "Code", href: "https://github.com/amoakoatuobipapayaw-svg/Signly" }],
+    images: [
+      {
+        src: "projects/signly-learn.jpg",
+        alt: "Signly's Learn page: lesson units, a fingerspelled name, a practice streak calendar and XP progress",
+      },
+      {
+        src: "projects/signly-welcome.jpg",
+        alt: "Signly's welcome screen: sign in with Google or continue as a guest",
+      },
+    ],
   },
 ];
 

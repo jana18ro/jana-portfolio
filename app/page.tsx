@@ -36,11 +36,24 @@ function LedgerRow({ entry }: { entry: Entry }) {
 }
 
 function ProjectCard({ entry, index }: { entry: Entry; index: number }) {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const hasPicture = Boolean(entry.images?.length || entry.visual);
   return (
-    <article className="project">
-      <Frame>
-        {entry.visual ? <ProjectVisual kind={entry.visual} /> : null}
-      </Frame>
+    <article className={hasPicture ? "project" : "project text-only"}>
+      {hasPicture && (
+        <Frame>
+          {entry.images?.length ? (
+            <div className="project-shots">
+              {entry.images.map((img) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={img.src} src={`${base}/${img.src}`} alt={img.alt} loading="lazy" />
+              ))}
+            </div>
+          ) : entry.visual ? (
+            <ProjectVisual kind={entry.visual} />
+          ) : null}
+        </Frame>
+      )}
       <div className="project-text">
         <p className="project-no num">{String(index + 1).padStart(2, "0")}</p>
         <h3>{entry.title}</h3>
